@@ -56,15 +56,15 @@ AI_CHOICES = {
 
 # ASCII Art Banner
 BANNER = """
-███████╗██████╗ ███████╗ ██████╗██╗███████╗██╗   ██╗
-██╔════╝██╔══██╗██╔════╝██╔════╝██║██╔════╝╚██╗ ██╔╝
-███████╗██████╔╝█████╗  ██║     ██║█████╗   ╚████╔╝ 
-╚════██║██╔═══╝ ██╔══╝  ██║     ██║██╔══╝    ╚██╔╝  
-███████║██║     ███████╗╚██████╗██║██║        ██║   
-╚══════╝╚═╝     ╚══════╝ ╚═════╝╚═╝╚═╝        ╚═╝   
+███████╗██╗  ██╗██╗██████╗ ██████╗ ██████╗ 
+██╔════╝██║ ██╔╝██║██╔══██╗██╔══██╗██╔══██╗
+███████╗█████╔╝ ██║██████╔╝██████╔╝██████╔╝
+╚════██║██╔═██╗ ██║██╔═══╝ ██╔═══╝ ██╔══██╗
+███████║██║  ██╗██║██║     ██║     ██║  ██║
+╚══════╝╚═╝  ╚═╝╚═╝╚═╝     ╚═╝     ╚═╝  ╚═╝
 """
 
-TAGLINE = "Spec-Driven Development Toolkit"
+TAGLINE = "Spec-Driven Development by Skippr"
 class StepTracker:
     """Track and render hierarchical steps without emojis, similar to Claude Code tree output.
     Supports live auto-refresh via an attached refresh callback.
@@ -154,9 +154,9 @@ class StepTracker:
 
 
 MINI_BANNER = """
-╔═╗╔═╗╔═╗╔═╗╦╔═╗╦ ╦
-╚═╗╠═╝║╣ ║  ║╠╣ ╚╦╝
-╚═╝╩  ╚═╝╚═╝╩╚   ╩ 
+╔═╗╦╔═╦╔═╗╔═╗╦═╗
+╚═╗╠╩╗║╠═╝╠═╝╠╦╝
+╚═╝╩ ╩╩╩  ╩  ╩╚═
 """
 
 def get_key():
@@ -288,7 +288,7 @@ def show_banner():
     """Display the ASCII art banner."""
     # Create gradient effect with different colors
     banner_lines = BANNER.strip().split('\n')
-    colors = ["bright_blue", "blue", "cyan", "bright_cyan", "white", "bright_white"]
+    colors = ["bright_magenta", "magenta", "bright_red", "red", "bright_magenta", "magenta"]
     
     styled_banner = Text()
     for i, line in enumerate(banner_lines):
@@ -483,7 +483,7 @@ def download_template_from_github(ai_assistant: str, download_dir: Path, *, verb
     return zip_path, metadata
 
 
-def download_and_extract_template(project_path: Path, ai_assistant: str, is_current_dir: bool = False, *, verbose: bool = True, tracker: StepTracker | None = None) -> Path:
+def download_and_extract_template(project_path: Path, ai_assistant: str, is_current_dir: bool = False, *, verbose: bool = True, tracker: Optional[StepTracker] = None) -> Path:
     """Download the latest release and extract it to create a new project.
     Returns project_path. Uses tracker if provided (with keys: fetch, download, extract, cleanup)
     """

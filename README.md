@@ -1,11 +1,11 @@
 <div align="center">
     <img src="./media/logo_small.webp"/>
-    <h1>🌱 Spec Kit</h1>
-    <h3><em>Build high-quality software faster.</em></h3>
+    <h1>🚀 Skippr Spec Kit</h1>
+    <h3><em>Ship enterprise-grade products with AI-powered quality assurance.</em></h3>
 </div>
 
 <p align="center">
-    <strong>An effort to allow organizations to focus on product scenarios rather than writing undifferentiated code with the help of Spec-Driven Development.</strong>
+    <strong>Enhanced Spec-Driven Development toolkit that ensures superior UX, accessibility, content quality, and production readiness through AI agent guidance and automated quality gates.</strong>
 </p>
 
 [![Release](https://github.com/github/spec-kit/actions/workflows/release.yml/badge.svg)](https://github.com/github/spec-kit/actions/workflows/release.yml)
@@ -14,32 +14,53 @@
 
 ## Table of Contents
 
-- [🤔 What is Spec-Driven Development?](#-what-is-spec-driven-development)
+- [🎯 What Makes Skippr Different](#-what-makes-skippr-different)
 - [⚡ Get started](#-get-started)
+- [🛡️ Quality Assurance Commands](#️-quality-assurance-commands)
+- [📊 Automated Quality Gates](#-automated-quality-gates)
 - [📚 Core philosophy](#-core-philosophy)
 - [🌟 Development phases](#-development-phases)
-- [🎯 Experimental goals](#-experimental-goals)
 - [🔧 Prerequisites](#-prerequisites)
 - [📖 Learn more](#-learn-more)
 - [📋 Detailed process](#-detailed-process)
 - [🔍 Troubleshooting](#-troubleshooting)
 - [👥 Maintainers](#-maintainers)
 - [💬 Support](#-support)
-- [🙏 Acknowledgements](#-acknowledgements)
 - [📄 License](#-license)
 
-## 🤔 What is Spec-Driven Development?
+## 🎯 What Makes Skippr Different
 
-Spec-Driven Development **flips the script** on traditional software development. For decades, code has been king — specifications were just scaffolding we built and discarded once the "real work" of coding began. Spec-Driven Development changes this: **specifications become executable**, directly generating working implementations rather than just guiding them.
+Skippr Spec Kit enhances traditional Spec-Driven Development with **enterprise-grade quality assurance** built into every step:
+
+### Production Excellence by Default
+- **UX Quality**: Every feature ships with loading states, error boundaries, micro-interactions, and responsive design
+- **Accessibility**: WCAG 2.1 AA compliance validated automatically before deployment
+- **Content Excellence**: Professional microcopy, helpful error messages, and consistent brand voice
+- **Performance**: Core Web Vitals optimization and sub-3s page loads guaranteed
+
+### AI-Powered Quality Assurance
+Our enhanced AI agent commands don't just build features—they ensure excellence:
+- `/ux-audit`: Analyzes and improves user experience patterns
+- `/a11y-scan`: Validates WCAG compliance and fixes issues
+- `/copy-review`: Ensures professional, clear, helpful content
+- `/prod-ready`: Comprehensive production readiness validation
+
+### Automated Quality Gates
+Every commit must pass our constitution requirements:
+- UX standards compliance check
+- Accessibility audit (WCAG 2.1 AA)
+- Content quality validation
+- Security and performance benchmarks
+- Test coverage requirements
 
 ## ⚡ Get started
 
-### 1. Install Specify
+### 1. Install Skippr Spec Kit
 
-Initialize your project depending on the coding agent you're using:
+Initialize your project with enhanced quality assurance features:
 
 ```bash
-uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME>
+uvx --from git+https://github.com/skippr-hq/skippr-speckit.git specify init <PROJECT_NAME>
 ```
 
 ### 2. Create the spec
@@ -62,16 +83,69 @@ Use the `/plan` command to provide your tech stack and architecture choices.
 
 Use `/tasks` to create an actionable task list, then ask your agent to implement the feature.
 
+### 5. Ensure quality excellence
+
+Use our enhanced quality commands throughout development:
+
+```bash
+# Check UX patterns and interactions
+/ux-audit
+
+# Validate accessibility compliance
+/a11y-scan
+
+# Review content and microcopy
+/copy-review
+
+# Verify production readiness
+/prod-ready
+```
+
 For detailed step-by-step instructions, see our [comprehensive guide](./spec-driven.md).
+
+## 🛡️ Quality Assurance Commands
+
+### UX Excellence Commands
+- **`/ux-audit`** - Analyzes current implementation against UX best practices
+- **`/ux-flow`** - Maps user journeys and identifies friction points
+- **`scripts/check-ux-standards.sh`** - Automated UX compliance validation
+
+### Accessibility Commands
+- **`/a11y-scan`** - Runs WCAG 2.1 AA compliance check
+- **`/a11y-enhance`** - Auto-adds missing ARIA labels and keyboard navigation
+- **`scripts/check-a11y-compliance.sh`** - Automated accessibility testing
+
+### Content Quality Commands
+- **`/copy-review`** - Analyzes all user-facing text for clarity and tone
+- **`/copy-enhance`** - Rewrites error messages and creates helpful empty states
+- **`scripts/check-content-quality.sh`** - Validates content standards
+
+### Production Readiness
+- **`/quality-gate`** - Runs all constitution checks
+- **`/prod-ready`** - Comprehensive production checklist
+- **`scripts/production-readiness-check.sh`** - Final deployment validation
+
+## 📊 Automated Quality Gates
+
+All code must pass these automated checks before deployment:
+
+| Check | Standard | Tool |
+|-------|----------|------|
+| UX Patterns | Loading states, error boundaries, responsive design | `check-ux-standards.sh` |
+| Accessibility | WCAG 2.1 Level AA | `check-a11y-compliance.sh` |
+| Content Quality | 8th grade reading level, actionable errors | `check-content-quality.sh` |
+| Security | OWASP Top 10, no hardcoded secrets | `production-readiness-check.sh` |
+| Performance | Core Web Vitals, <3s page loads | Built-in benchmarks |
+| Testing | >80% coverage, E2E for critical paths | Test runners |
 
 ## 📚 Core philosophy
 
-Spec-Driven Development is a structured process that emphasizes:
+Skippr Spec Kit enhances Spec-Driven Development with:
 
-- **Intent-driven development** where specifications define the "_what_" before the "_how_"
-- **Rich specification creation** using guardrails and organizational principles
-- **Multi-step refinement** rather than one-shot code generation from prompts
-- **Heavy reliance** on advanced AI model capabilities for specification interpretation
+- **Quality-first development** where excellence is non-negotiable
+- **AI-guided implementation** with built-in best practices
+- **Automated validation** ensuring consistency across teams
+- **Enterprise standards** baked into every feature
 
 ## 🌟 Development phases
 
@@ -81,31 +155,33 @@ Spec-Driven Development is a structured process that emphasizes:
 | **Creative Exploration** | Parallel implementations | <ul><li>Explore diverse solutions</li><li>Support multiple technology stacks & architectures</li><li>Experiment with UX patterns</li></ul> |
 | **Iterative Enhancement** ("Brownfield") | Brownfield modernization | <ul><li>Add features iteratively</li><li>Modernize legacy systems</li><li>Adapt processes</li></ul> |
 
-## 🎯 Experimental goals
+## 🎯 Skippr's Mission
 
-Our research and experimentation focus on:
+We're transforming how teams ship enterprise software by ensuring:
 
-### Technology independence
+### Quality Without Compromise
 
-- Create applications using diverse technology stacks
-- Validate the hypothesis that Spec-Driven Development is a process not tied to specific technologies, programming languages, or frameworks
+- Every feature meets enterprise UX, accessibility, and content standards
+- Automated quality gates prevent subpar code from reaching production
+- AI agents guide developers toward best practices automatically
 
-### Enterprise constraints
+### Faster Time to Excellence
 
-- Demonstrate mission-critical application development
-- Incorporate organizational constraints (cloud providers, tech stacks, engineering practices)
-- Support enterprise design systems and compliance requirements
+- Skip the "MVP now, quality later" trap
+- Ship production-ready features from day one
+- Reduce rework and technical debt through upfront quality
 
-### User-centric development
+### Consistent Enterprise Standards
 
-- Build applications for different user cohorts and preferences
-- Support various development approaches (from vibe-coding to AI-native development)
+- Enforce organizational design systems and patterns
+- Maintain brand voice and content quality across teams
+- Ensure WCAG compliance and security standards automatically
 
-### Creative & iterative processes
+### AI-Native Development
 
-- Validate the concept of parallel implementation exploration
-- Provide robust iterative feature development workflows
-- Extend processes to handle upgrades and modernization tasks  
+- Leverage AI to enforce quality standards, not just generate code
+- Automated reviews for UX, accessibility, and content
+- Intelligent suggestions for improvements before issues arise  
 
 ## 🔧 Prerequisites
 
