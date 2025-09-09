@@ -1,6 +1,30 @@
 #!/usr/bin/env bash
 # Common functions and variables for all scripts
 
+# Color output functions
+print_header() {
+    echo ""
+    echo "========================================"
+    echo "$1"
+    echo "========================================"
+}
+
+print_success() {
+    echo -e "\033[32m✓\033[0m $1"
+}
+
+print_error() {
+    echo -e "\033[31m✗\033[0m $1"
+}
+
+print_warning() {
+    echo -e "\033[33m⚠\033[0m $1"
+}
+
+print_info() {
+    echo -e "\033[34mℹ\033[0m $1"
+}
+
 # Get repository root
 get_repo_root() {
     git rev-parse --show-toplevel
