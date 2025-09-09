@@ -29,6 +29,7 @@ import zipfile
 import tempfile
 import shutil
 import json
+import stat
 from pathlib import Path
 from typing import Optional
 
@@ -483,6 +484,19 @@ def download_template_from_github(ai_assistant: str, download_dir: Path, *, verb
     return zip_path, metadata
 
 
+def set_executable_permissions(project_path: Path, *, verbose: bool = False):
+    """Set executable permissions on all shell scripts in the project."""
+    scripts_dir = project_path / "scripts"
+    if scripts_dir.exists():
+        shell_scripts = list(scripts_dir.glob("*.sh"))
+        if shell_scripts:
+            for script in shell_scripts:
+                # Set executable permissions (755: rwxr-xr-x)
+                script.chmod(script.stat().st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+            if verbose:
+                console.print(f"[green]✓[/green] Made {len(shell_scripts)} scripts executable in scripts/")
+
+
 def download_and_extract_template(project_path: Path, ai_assistant: str, is_current_dir: bool = False, *, verbose: bool = True, tracker: Optional[StepTracker] = None) -> Path:
     """Download the latest release and extract it to create a new project.
     Returns project_path. Uses tracker if provided (with keys: fetch, download, extract, cleanup)
@@ -621,6 +635,8 @@ def download_and_extract_template(project_path: Path, ai_assistant: str, is_curr
     else:
         if tracker:
             tracker.complete("extract")
+        # Set executable permissions on scripts after successful extraction
+        set_executable_permissions(project_path, verbose=verbose and not tracker)
     finally:
         if tracker:
             tracker.add("cleanup", "Remove temporary archive")
